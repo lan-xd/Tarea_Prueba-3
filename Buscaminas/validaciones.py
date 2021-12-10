@@ -1,6 +1,7 @@
 
 #Validaciones de el bloque seleccionado
 
+
 class validaciones:
     def __init__(self):
         pass
