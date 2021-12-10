@@ -1,21 +1,17 @@
 from buscamina1 import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.uic import loadUi
-from PyQt5.QtCore import pyqtSlot, QTimer
 from PyQt5.QtWidgets import QDialog,QApplication
 import sys
 import numpy as np
 
 
-class Main(QDialog):
-    def __init__(self):
-        super(Main, self).__init__()
+class main(QDialog):
+     def __init__(self):
+        super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.btnActions()
+        self.BtnActions()
         self.show()
-        
 
     def btnActions(self):
         self.ui.pushButton.clicked.connect(self.button_1)
@@ -33,7 +29,6 @@ class Main(QDialog):
                 a = i+1
                 b = j+1
                 x[i,j] = 1
-
         print(x)
 
     def button_2(self):
@@ -64,7 +59,6 @@ class Main(QDialog):
 
         print(x)
 
-if(__name__ == "__main__"):
-    app = QApplication(sys.argv)
-    window = Ui_MainWindow()
+if __name__ == '__main__':
+    app = main(sys.argv)
     sys.exit(app.exec_())
