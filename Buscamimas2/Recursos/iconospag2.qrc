@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="iconospag2">
+    <file>relojr7.png</file>
+    <file>reloj6.png</file>
+    <file>relojy.png</file>
+    <file>reloj2.png</file>
+    <file>reloj.png</file>
+  </qresource>
+</RCC>
