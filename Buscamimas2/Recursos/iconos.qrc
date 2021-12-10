@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="iconosbuscaminas">
+    <file>ima3.jpg</file>
+    <file>ima3.jfif</file>
+    <file>imgprueba.jpg</file>
+    <file>img1.jfif</file>
+    <file>blur6.jpg</file>
+    <file>blur5.jpg</file>
+    <file>blur3.jfif</file>
+    <file>blur2.jfif</file>
+    <file>imgbusca.webp</file>
+    <file>blur.jfif</file>
+  </qresource>
+</RCC>

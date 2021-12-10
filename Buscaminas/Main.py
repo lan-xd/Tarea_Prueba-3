@@ -1,18 +1,21 @@
 from buscamina1 import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QDialog,QApplication
+from PyQt5.QtWidgets import QDialog,QApplication, QMainWindow
 import sys
 import numpy as np
 
 
-class main(QDialog):
-     def __init__(self):
-        super().__init__()
+class MainWindow(QMainWindow):
+    def __init__(self, *args, **kwargs):
+        super(MainWindow, self).__init__(*args, **kwargs)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.BtnActions()
+        self.btnActions()
         self.show()
 
+        
+  
     def btnActions(self):
         self.ui.pushButton.clicked.connect(self.button_1)
         self.ui.pushButton_2.clicked.connect(self.button_2)
@@ -53,12 +56,12 @@ class main(QDialog):
 
         for i in range(filas):
             for j in range(columnas):
-                a = i+1
-                b = j+1
                 x[i,j] = 1
 
         print(x)
 
-if __name__ == '__main__':
-    app = main(sys.argv)
-    sys.exit(app.exec_())
+if __name__ == "__main__":  
+    app = QApplication([])
+    window = MainWindow()
+    window.show()
+    app.exec_()
