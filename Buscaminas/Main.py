@@ -3,20 +3,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.uic import loadUi
 from PyQt5.QtCore import pyqtSlot, QTimer
-from PyQt5.QtWidgets import QDialog,QApplication
+from PyQt5.QtWidgets import QDialog,QApplication, QMainWindow
 import sys
 import numpy as np
 
 
-class Main(QDialog):
+class MainWindow(QMainWindow):
     def __init__(self):
-        super(Main, self).__init__()
+        print("ok")
+        super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.btnActions()
         self.show()
         
-
+  
     def btnActions(self):
         self.ui.pushButton.clicked.connect(self.button_1)
         self.ui.pushButton_2.clicked.connect(self.button_2)
@@ -64,7 +65,11 @@ class Main(QDialog):
 
         print(x)
 
-if(__name__ == "__main__"):
-    app = QApplication(sys.argv)
-    window = Ui_MainWindow()
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
     sys.exit(app.exec_())
