@@ -6,16 +6,12 @@ import sys
 import numpy as np
 
 
-class main(QDialog):
-     def __init__(self):
-        super().__init__()
 class MainWindow(QMainWindow):
-    def __init__(self):
-        print("ok")
-        super(MainWindow, self).__init__()
+    def __init__(self, *args, **kwargs):
+        super(MainWindow, self).__init__(*args, **kwargs)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.BtnActions()
+        self.btnActions()
         self.show()
 
         
@@ -60,17 +56,12 @@ class MainWindow(QMainWindow):
 
         for i in range(filas):
             for j in range(columnas):
-                a = i+1
-                b = j+1
                 x[i,j] = 1
 
         print(x)
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+if __name__ == "__main__":  
+    app = QApplication([])
+    window = MainWindow()
+    window.show()
+    app.exec_()
